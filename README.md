@@ -21,7 +21,7 @@ that sets `GEM_HOME`/`GEM_PATH` to `libexec`, so it doesn't see or touch your ow
 agentmon's `Homebrew` workflow (`.github/workflows/homebrew.yml` in
 [satoramoto/agentmon](https://github.com/satoramoto/agentmon)) runs after each release reaches
 RubyGems: it points the formula at the new gems, installs, tests and audits it on macOS, and pushes
-here. Run that workflow by hand to retry or to pick up a new r2ui.
+here. The formula changes only with an agentmon release. Run that workflow by hand to retry.
 
 To change the formula by hand, check it locally before pushing:
 
