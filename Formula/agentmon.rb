@@ -38,6 +38,8 @@ class Agentmon < Formula
   test do
     assert_match "agentmon #{version}", shell_output("#{bin}/agentmon --version")
     # Piped, agentmon prints one plain frame of this Mac and exits.
-    assert_match "agentmon", pipe_output("#{bin}/agentmon", "")
+    frame = pipe_output("#{bin}/agentmon", "")
+    assert_match "CPU", frame
+    assert_match "Memory", frame
   end
 end
