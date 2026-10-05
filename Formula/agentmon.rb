@@ -22,7 +22,8 @@ class Agentmon < Formula
 
   def install
     ENV["GEM_HOME"] = libexec
-    gems = resources.map(&:fetch) + [cached_download]
+    # brew fetches and verifies every resource before the build; don't download from in here.
+    gems = resources.map(&:cached_download) + [cached_download]
     gems.each do |gem|
       system "gem", "install", gem, "--ignore-dependencies", "--no-document", "--install-dir", libexec
     end
