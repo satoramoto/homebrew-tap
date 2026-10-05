@@ -1,10 +1,8 @@
 class Agentmon < Formula
   desc "Terminal monitor for what AI coding agents cost your Mac"
   homepage "https://github.com/satoramoto/agentmon"
-  # LOCAL TEST SOURCE: agentmon 0.1.0 isn't on RubyGems yet. Once it is, replace with
-  #   url "https://rubygems.org/downloads/agentmon-0.1.0.gem"
-  url "file:///private/tmp/claude-501/-Users-ryan-The-Source-agentmon/98b7bafe-2b49-4f0e-9555-10e8d52fc9e1/scratchpad/gems/agentmon-0.1.0.gem"
-  sha256 "1581cacb88e52e3b6b745e5f2b53af6d9f5312fa0762a775a90b7fa7aa4a100c"
+  url "https://rubygems.org/downloads/agentmon-0.1.0.gem"
+  sha256 "0cf80379a22717ceda1a037cbd639c1d7c133ffc831d01df4fc0e196d7c539f9"
   license "MIT"
 
   depends_on :macos
@@ -18,10 +16,8 @@ class Agentmon < Formula
   end
 
   resource "r2ui" do
-    # LOCAL TEST SOURCE: r2ui 0.2.0 isn't on RubyGems yet. Once it is, replace with
-    #   url "https://rubygems.org/downloads/r2ui-0.2.0.gem"
-    url "file:///private/tmp/claude-501/-Users-ryan-The-Source-agentmon/98b7bafe-2b49-4f0e-9555-10e8d52fc9e1/scratchpad/gems/r2ui-0.2.0.gem"
-    sha256 "b6398c2dd88e5c9ee845347293cd5463a45ae1557426cfe3ee2aa665e9fcffc5"
+    url "https://rubygems.org/downloads/r2ui-0.2.0.gem"
+    sha256 "3caa1f1b73561d3d308764bab0b0b7afc19e8c2a15ee1d047db48a47d0ffb58d"
   end
 
   def install
