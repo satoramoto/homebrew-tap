@@ -30,15 +30,14 @@ class Agentmon < Formula
     gems.each do |gem|
       system "gem", "install", gem, "--ignore-dependencies", "--no-document", "--install-dir", libexec
     end
-    (bin/"agentmon").write_env_script libexec/"bin/agentmon",
-                                      GEM_HOME: libexec, GEM_PATH: libexec,
-                                      PATH:     "#{Formula["ruby"].opt_bin}:$PATH"
+    # The gem's binstub already runs opt/ruby/bin/ruby (stable across ruby upgrades).
+    (bin/"agentmon").write_env_script libexec/"bin/agentmon", GEM_HOME: libexec, GEM_PATH: libexec
   end
 
   test do
     assert_match "agentmon #{version}", shell_output("#{bin}/agentmon --version")
     # Piped, agentmon prints one plain frame of this Mac and exits.
-    frame = pipe_output("#{bin}/agentmon", "")
+    frame = pipe_output(bin/"agentmon", "")
     assert_match "CPU", frame
     assert_match "Memory", frame
   end
